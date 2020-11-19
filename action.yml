@@ -27,7 +27,7 @@ runs:
       shell: bash
 
     - name: Generate table of content
-      run: /tmp/gh-md-toc target
+      run: /tmp/gh-md-toc target --insert {{target}}
       shell: bash
 
     - name: Check if changes were made

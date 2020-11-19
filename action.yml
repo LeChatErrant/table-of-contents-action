@@ -1,0 +1,31 @@
+name: Table of content
+description: Generate a Table of content section in your README.md
+inputs:
+  target:
+    description: Mardown file to target
+    required: true
+    default: README.md
+outputs:
+  changes:
+    description: 'true' if changes were made, 'false' otherwise
+    value: ${{ steps.diff-checker.outputs.changes }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Get script
+      run: wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
+      working-directory: '/tmp'
+
+    - name: Set script permissions
+      run: chmod a+x gh-md-toc
+      working-directory: '/tmp'
+
+    - name: Save old version
+      run: cp ${{ inputs.target }} /tmp/backup
+
+    - name: Generate table of content
+      run: /tmp/gh-md-doc target
+
+    - name: Check if changes were made
+      id: diff-checker
+      run: echo "::set-output name=changes::$(if cmp -s ${{ inputs.target }} /tmp/backup; then echo 'false'; else echo 'true'; fi)

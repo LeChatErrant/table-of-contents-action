@@ -15,17 +15,22 @@ runs:
     - name: Get script
       run: wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
       working-directory: '/tmp'
+      shell: bash
 
     - name: Set script permissions
       run: chmod a+x gh-md-toc
       working-directory: '/tmp'
+      shell: bash
 
     - name: Save old version
       run: cp ${{ inputs.target }} /tmp/backup
+      shell: bash
 
     - name: Generate table of content
       run: /tmp/gh-md-doc target
+      shell: bash
 
     - name: Check if changes were made
       id: diff-checker
       run: echo "::set-output name=changes::$(if cmp -s ${{ inputs.target }} /tmp/backup; then echo 'false'; else echo 'true'; fi)
+      shell: bash

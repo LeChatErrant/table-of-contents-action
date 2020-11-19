@@ -18,6 +18,11 @@ runs:
       shell: bash
 
     - name: Set script permissions
+      run: ls
+      working-directory: '/tmp'
+      shell: bash
+
+    - name: Set script permissions
       run: chmod a+x gh-md-toc
       working-directory: '/tmp'
       shell: bash

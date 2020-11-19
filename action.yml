@@ -7,7 +7,7 @@ inputs:
     default: README.md
 outputs:
   changes:
-    description: 'true' if changes were made, 'false' otherwise
+    description: "'true' if changes were made, 'false' otherwise"
     value: ${{ steps.diff-checker.outputs.changes }}
 runs:
   using: 'composite'

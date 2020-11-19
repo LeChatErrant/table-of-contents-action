@@ -18,11 +18,6 @@ runs:
       shell: bash
 
     - name: Set script permissions
-      run: ls
-      working-directory: '/tmp'
-      shell: bash
-
-    - name: Set script permissions
       run: chmod a+x gh-md-toc
       working-directory: '/tmp'
       shell: bash
@@ -32,7 +27,7 @@ runs:
       shell: bash
 
     - name: Generate table of content
-      run: /tmp/gh-md-doc target
+      run: /tmp/gh-md-toc target
       shell: bash
 
     - name: Check if changes were made

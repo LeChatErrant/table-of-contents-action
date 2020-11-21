@@ -12,7 +12,7 @@ Table of Contents
       * [Usage](#usage)
       * [Contributors](#contributors)
 
-<!-- Added by: runner, at: Sat Nov 21 00:55:19 UTC 2020 -->
+<!-- Added by: runner, at: Sat Nov 21 01:25:19 UTC 2020 -->
 
 <!--te-->
 
@@ -36,7 +36,7 @@ In the workflow example below, I'm using the github action made by [ad-m](https:
       * [Usage](#usage)
       * [Contributors](#contributors)
 
-<!-- Added by: runner, at: Sat Nov 21 00:55:19 UTC 2020 -->
+<!-- Added by: runner, at: Sat Nov 21 01:25:19 UTC 2020 -->
 
 <!--te-->
 ```

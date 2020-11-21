@@ -18,7 +18,7 @@ Table of Contents
 
 ## Credits
 
-The script generating the markdown "Table of contents" section is from [ekalinin](https://github.com/ekalinin/github-markdown-toc)
+The script generating the markdown "Table of contents" section is forked from [ekalinin](https://github.com/ekalinin/github-markdown-toc)
 
 In the workflow example below, I'm using the github action made by [ad-m](https://github.com/ad-m/github-push-action)
 

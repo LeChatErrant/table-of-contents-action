@@ -13,7 +13,7 @@ runs:
   using: 'composite'
   steps:
     - name: Get script
-      run: wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
+      run: wget https://raw.githubusercontent.com/LeChatErrant/github-markdown-toc/master/gh-md-toc
       working-directory: '/tmp'
       shell: bash
 

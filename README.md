@@ -64,7 +64,18 @@ jobs:
           branch: ${{ github.ref }}
 ```
 
-3. Enjoy!
+3. [Optional] - Specify the target file (by default, the target is `README.md`)
+
+```yaml
+      - name: Generate table of content
+        id: generate
+        uses: LeChatErrant/table-of-contents-action@v1.0.0
+        with:
+          target: 'OTHERFILE.md'
+```
+
+
+4. Enjoy!
 
 > This single workflow ensure a "Table of contents" section is automatically generated and pushed to your repository
 

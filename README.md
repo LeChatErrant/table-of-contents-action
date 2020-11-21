@@ -1,6 +1,6 @@
 # table-of-contents-action
 
-Githbu action to automatically generate a Table of content section in your README.md
+Github action to automatically generate a Table of content section in your README.md
 
 Table of Contents
 =================
@@ -65,7 +65,7 @@ jobs:
         uses: LeChatErrant/table-of-contents-action@v1
 
       - name: Commit
-        if: ${{ steps.generate.outputs.changes }} == 'true'
+        if: steps.generate.outputs.changes == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -73,12 +73,14 @@ jobs:
           git commit -m "doc: README.md table of contents updated [AUTO]"
 
       - name: Push changes
-        if: ${{ steps.generate.outputs.changes }} == 'true'
+        if: steps.generate.outputs.changes == 'true'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 ```
+
+> This single workflow ensure a "Table of contents" section is automatically generated and pushed to your repository if necessary
 
 3. [Optional] - Specify the target file (by default, the target is `README.md`)
 
@@ -90,10 +92,7 @@ jobs:
           target: 'OTHERFILE.md'
 ```
 
-
 4. Enjoy!
-
-> This single workflow ensure a "Table of contents" section is automatically generated and pushed to your repository
 
 ## Contributors
 
